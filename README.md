@@ -1,7 +1,7 @@
 Canny Edge Detector Prototype
 ===
 
-This is a microservice prototype, which runs the [Canny Edge Detection](https://en.wikipedia.org/wiki/Canny_edge_detector) algorithm on images uploaded to an REST endpoint. This was written in three hours so expect bugs and errors.
+This is a microservice prototype, which runs the [Canny Edge Detection](https://en.wikipedia.org/wiki/Canny_edge_detector) algorithm on images uploaded to an REST endpoint. This was written in three hours as part of an interview assignment so expect bugs and errors.
 
 ## Run
 
@@ -13,10 +13,13 @@ Use the service with any web request tool like Postman or cUrl.
 
 - Setup CI lint
 - Use external uWSGI and Nginx
+- Provide Helm chart
+- Use numpy on the whole arrays instead of just the single values inside for-loops
 - Perform the calculations in another thread (using OpenCV would also increase preformance significantly)
-- Rearchitect the application:
-  - Put image into a queue and return transaction ID instead of image directly
-  - Provide a different endpoint which, given the transaction ID, returns the processed image
+- Rearchitect the application
+  - Put the image into a queue and return transaction ID instead of the image
+  - Provide a different endpoint, which, given the transaction ID, returns the processed image (or an error if its not yet finished)
+  - Or build it cloud-native with AWS/Azure Queues and Lamdbas/Cloud Functions
 
 ## Examples
 
