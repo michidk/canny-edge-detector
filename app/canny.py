@@ -36,22 +36,22 @@ class CannyEdge():
         for x in range(1, int(rows) - 1):
             for y in range(1, int(columns) - 1):
                 if (dir[x,y] == 0):
-                    if((sobel[x,y] > sobel[x,y+1]) and (sobel[x,y] > sobel[x,y-1])):
+                    if (sobel[x,y] > sobel[x,y+1]) and (sobel[x,y] > sobel[x,y-1]):
                         suppression[x,y] = sobel[x,y]
                     else:
                         suppression[x,y] = 0
                 if dir[x, y] == 1:
-                    if((sobel[x,y] > sobel[x+1,y+1]) and (sobel[x,y] > sobel[x-1,y-1])):
+                    if (sobel[x,y] > sobel[x+1,y+1]) and (sobel[x,y] > sobel[x-1,y-1]):
                         suppression[x,y] = sobel[x,y]
                     else:
                         suppression[x,y] = 0
                 if dir[x, y] == 2:
-                    if((sobel[x,y] > sobel[x+1,y]) and (sobel[x,y] > sobel[x-1,y])):
+                    if (sobel[x,y] > sobel[x+1,y]) and (sobel[x,y] > sobel[x-1,y]):
                         suppression[x,y] = sobel[x,y]
                     else:
                         suppression[x,y] = 0
                 if dir[x, y] == 3:
-                    if((sobel[x,y] > sobel[x+1,y-1]) and (sobel[x,y] > sobel[x-1,y+1])):
+                    if (sobel[x,y] > sobel[x+1,y-1]) and (sobel[x,y] > sobel[x-1,y+1]):
                         suppression[x,y] = sobel[x,y]
                     else:
                         suppression[x,y] = 0
